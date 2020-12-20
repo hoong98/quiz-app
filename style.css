@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+body{
+    font-size: 16px;
+    background-color:#22a6b3 ;
+    font-family: 'Andika New Basic', sans-serif;
+    font-weight: 400;
+}
+
+.custom-box{
+    max-width: 700px;
+    background-color: #7ed6df;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius:10px;
+     animation: fadeIn 0.5s forwards;
+}
+
+.custom-box::before,.custom-box::after{
+    content:'';
+    clear:both;
+    display: table;
+}
+
+.custom-box.hide{
+    display: none;
+}
+
+.home-box h3{
+    font-size: 18px;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 25px;
+}
+
+.home-box p{
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 22px;
+}
+
+.home-box p span{
+    font-weight: 600;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 45px;
+    background-color:#535c68;
+    color:#e9e9e9;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-family: 'Andika New Basic', sans-serif;
+}
+
+.quiz-box .question-number,
+.quiz-box .question-text,
+.quiz-box .option-container,
+.quiz-box .next-question-btn
+.quiz-box .answer-indicator{
+    width:100%;
+    float: left;
+}
+
+.quiz-box .question-number{
+    font-size: 20px;
+    font-weight: 500;
+    color:#22a6b3;
+    border-bottom:2px solid #e9e9e9;
+    padding-bottom: 10px;
+    line-height: 25px;
+}
+.quiz-box .question-text{
+    font-size: 22px;
+    color:#000000;
+    line-height: 28px;
+    font-weight:  400;
+    padding: 20px 0;
+    margin:0;
+}
+
+.quiz-box .option-container .option{
+    background-color: #e9e9e9;
+    padding:15px;
+    font-size:16px;
+    line-height: 22px;
+    color: #000000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+    position: relative;
+    overflow: hidden;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.quiz-box .option-container .option.correct::before{
+   content:'';
+   position: absolute;
+   left: 0;
+   top: 0;
+   height:100%;
+   width:100%;
+   background-color: green;
+   z-index: -1;
+   animation: slideInLeft .5s ease forwards
+}
+@keyframes slideInLeft{
+    0%{
+        transform: translateX(-100%);
+    }100%{
+         transform: translateX(0);
+    }
+}
+
+.quiz-box .option-container .option.wrong::before{
+   content:'';
+   position: absolute;
+   left: 0;
+   top: 0;
+   height:100%;
+   width:100%;
+   background-color: red;
+   z-index: -1;
+   animation: slideInRight .5s ease forwards
+}
+@keyframes slideInRight{
+    0%{
+        transform: translateX(100%);
+    }100%{
+         transform: translateX(0);
+    }
+}
+.quiz-box .option-container .option.wrong{
+    color: #ffffff;
+}
+.quiz-box .option-container .option.correct{
+    color: #ffffff;
+}
+.quiz-box .option-container .option.already-answered{
+    pointer-events: none;
+}
+
+.quiz-box .btn{
+    margin-bottom: 20px;
+}
+
+.quiz-box .answer-indicator{
+    border-top: 2px solid #e9e9e9;
+}
+
+.quiz-box .answer-indicator div{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background: #e9e9e9;
+    border-radius: 50%;
+    margin-right: 3px;
+    margin-top: 10px;
+}
+
+.quiz-box .answer-indicator div.correct{
+   background-color: green;
+   background-image:  url('./correct.png');
+   background-size: 50%;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.quiz-box .answer-indicator div.wrong{
+    background-color: red;
+     background-image:  url('./wrong.png');
+   background-size: 50%;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.result-box{
+    text-align: center;
+}
+
+.result-box h1{
+    font-size: 36px;
+    line-height: 42px;
+    color: #535c68;
+}   
+.result-box table{
+    width:100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+.result-box table td{
+    border:1px solid #e9e9e9;
+    width:50%;
+    padding:8px 15px;
+    color:#000000;
+    text-align: left;
+    font-size: 18px;
+}
+.result-box .btn{
+    margin-left:25px;
+}
